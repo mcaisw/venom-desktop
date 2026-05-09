@@ -1,0 +1,10 @@
+[Bb]in/
+[Oo]bj/
+.dotnet_home/
+.tmp/
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates

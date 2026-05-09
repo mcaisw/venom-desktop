@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Music Spectrum Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="stage" aria-label="spectrum analyzer">
+        <canvas id="visualizer"></canvas>
+      </section>
+
+      <aside class="panel" aria-label="controls">
+        <div class="brand">
+          <div class="mark"></div>
+          <div>
+            <h1>Music Spectrum Analyzer</h1>
+            <p>&#20808;&#20570;&#20934;&#30830;&#65292;&#20877;&#20570;&#33402;&#26415;&#21270;</p>
+          </div>
+        </div>
+
+        <label class="file-control">
+          <span>&#36873;&#25321;&#38899;&#20048;&#25991;&#20214;</span>
+          <input id="audio-file" type="file" accept="audio/*">
+        </label>
+
+        <div class="transport">
+          <button id="play" type="button">&#25773;&#25918;</button>
+          <button id="capture" type="button">&#25429;&#25417;&#31995;&#32479;&#38899;&#39057;</button>
+          <button id="demo" type="button">&#28436;&#31034;&#20449;&#21495;</button>
+        </div>
+
+        <p id="status" class="status">&#36873;&#25321;&#38899;&#20048;&#25991;&#20214;&#65292;&#25110;&#25429;&#25417;&#30005;&#33041;&#27491;&#22312;&#25773;&#25918;&#30340;&#22768;&#38899;&#12290;</p>
+
+        <div class="readouts">
+          <div>
+            <span>Peak</span>
+            <strong id="peak-readout">-inf dB</strong>
+          </div>
+          <div>
+            <span>RMS</span>
+            <strong id="rms-readout">-inf dB</strong>
+          </div>
+          <div>
+            <span>Centroid</span>
+            <strong id="centroid-readout">-- Hz</strong>
+          </div>
+        </div>
+
+        <audio id="audio" crossorigin="anonymous"></audio>
+      </aside>
+    </main>
+
+    <script src="src/app.js"></script>
+  </body>
+</html>

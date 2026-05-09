@@ -1,0 +1,13 @@
+<Window x:Class="VenomDesktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Venom Desktop"
+        WindowState="Maximized"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        Topmost="True">
+    <Grid x:Name="Root" Background="Transparent" IsHitTestVisible="False" />
+</Window>
