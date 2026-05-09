@@ -37,9 +37,9 @@ body {
   position: relative;
   min-height: 78vh;
   display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(520px, 1fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.82fr);
   align-items: center;
-  gap: 40px;
+  gap: 28px;
   overflow: hidden;
   padding: 8vh max(36px, calc((100vw - 1340px) / 2 + 36px)) 12vh;
 }
@@ -61,21 +61,22 @@ body {
 .state-visuals {
   position: relative;
   z-index: 1;
-  min-height: 590px;
+  min-height: 540px;
 }
 
 .state-image {
   display: block;
   position: absolute;
   border-radius: 8px;
-  object-fit: cover;
+  object-fit: contain;
+  background: rgba(0, 18, 17, 0.54);
   box-shadow: 0 34px 80px rgba(0, 0, 0, 0.5);
 }
 
 .crawl-state {
   right: 0;
   top: 0;
-  width: min(40vw, 430px);
+  width: clamp(270px, 28vw, 390px);
   aspect-ratio: 0.88;
   object-position: center;
 }
@@ -83,9 +84,9 @@ body {
 .listen-state {
   left: 0;
   bottom: 0;
-  width: min(42vw, 520px);
+  width: clamp(340px, 36vw, 500px);
   aspect-ratio: 1.68;
-  object-position: 69% center;
+  object-position: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
