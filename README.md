@@ -64,6 +64,3 @@ Use the `docs/` directory as the GitHub Pages source:
 3. Set source to `Deploy from a branch`.
 4. Set branch to `main` and folder to `/docs`.
 4. Save.
-
-The Buy Me a Coffee link in `docs/index.html` is currently a placeholder and
-should be replaced with the real creator profile URL before publishing broadly.
