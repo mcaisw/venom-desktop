@@ -37,9 +37,9 @@ body {
 .hero {
   min-height: 82vh;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
   align-items: center;
-  gap: 64px;
+  gap: 32px;
   padding: 72px 0 40px;
 }
 
@@ -54,7 +54,7 @@ body {
 
 h1 {
   margin: 0;
-  font-size: clamp(56px, 9vw, 120px);
+  font-size: clamp(56px, 8vw, 108px);
   line-height: 0.9;
   letter-spacing: 0;
 }
@@ -101,75 +101,146 @@ h1 {
 
 .stage {
   position: relative;
-  height: min(58vw, 520px);
-  min-height: 360px;
+  height: min(54vw, 460px);
+  min-height: 340px;
   display: grid;
   place-items: center;
 }
 
-.creature {
-  position: relative;
-  width: min(74vw, 430px);
-  aspect-ratio: 1;
-  border-radius: 45% 55% 51% 49% / 54% 43% 57% 46%;
-  background:
-    radial-gradient(circle at 35% 32%, rgba(255, 255, 255, 0.22), transparent 8%),
-    radial-gradient(circle at 42% 38%, rgba(54, 224, 79, 0.92), rgba(11, 18, 12, 0.96) 52%, #030403 78%);
-  filter: drop-shadow(0 26px 70px rgba(54, 224, 79, 0.34));
-  animation: creature-drift 7s ease-in-out infinite;
+.venom-stage {
+  min-height: 380px;
 }
 
-.creature::before,
-.creature::after {
+.desktop-preview {
+  position: relative;
+  width: min(76vw, 360px);
+  aspect-ratio: 1.24;
+  overflow: visible;
+}
+
+.desktop-preview::before {
   content: "";
   position: absolute;
-  inset: -5%;
-  border-radius: 44% 56% 52% 48% / 48% 52% 48% 52%;
-  border: 2px solid rgba(140, 255, 143, 0.18);
-  animation: membrane 3.8s ease-in-out infinite;
+  inset: 6% 2% 4% 0;
+  background:
+    radial-gradient(circle at 58% 52%, rgba(54, 224, 79, 0.1), transparent 20rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.02), transparent 45%);
+  opacity: 0.7;
 }
 
-.creature::after {
-  inset: 8%;
-  border-color: rgba(0, 0, 0, 0.42);
-  animation-duration: 5.2s;
-  animation-direction: reverse;
-}
-
-.core {
+.desktop-icon {
   position: absolute;
-  inset: 34%;
-  border-radius: 50%;
-  background: #010101;
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.06);
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  opacity: 0.42;
+  filter: blur(0.2px);
 }
 
-.pulse {
+.desktop-icon::before,
+.desktop-icon::after {
+  content: "";
   position: absolute;
-  width: 12%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: rgba(54, 224, 79, 0.92);
-  filter: blur(2px);
-  opacity: 0.9;
 }
 
-.pulse.one {
-  top: 8%;
-  left: 35%;
-  animation: pulse-one 1.8s ease-in-out infinite;
+.desktop-icon::before {
+  inset: 7px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.88);
 }
 
-.pulse.two {
-  right: 10%;
-  top: 50%;
-  animation: pulse-two 1.45s ease-in-out infinite;
+.desktop-icon::after {
+  width: 20px;
+  height: 8px;
+  left: 14px;
+  bottom: 10px;
+  border-radius: 2px;
+  background: rgba(54, 224, 79, 0.45);
 }
 
-.pulse.three {
-  bottom: 13%;
-  left: 23%;
-  animation: pulse-three 2.1s ease-in-out infinite;
+.icon-a {
+  left: 9%;
+  top: 10%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.icon-b {
+  right: 9%;
+  top: 9%;
+  background: rgba(255, 122, 31, 0.28);
+}
+
+.icon-c {
+  left: 8%;
+  bottom: 15%;
+  background: rgba(80, 140, 255, 0.25);
+}
+
+.icon-d {
+  right: 17%;
+  bottom: 10%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.venom-preview {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.tentacle {
+  stroke: #111;
+  stroke-width: 20;
+  filter: drop-shadow(0 9px 10px rgba(0, 0, 0, 0.72));
+}
+
+.tentacle-a {
+  animation: tentacle-a 5s ease-in-out infinite;
+}
+
+.tentacle-b {
+  animation: tentacle-b 4.4s ease-in-out infinite;
+}
+
+.tentacle-c {
+  animation: tentacle-c 5.6s ease-in-out infinite;
+}
+
+.tentacle-d {
+  animation: tentacle-d 4.8s ease-in-out infinite;
+}
+
+.tentacle-shine {
+  stroke: rgba(255, 255, 255, 0.18);
+  stroke-width: 3;
+}
+
+.body-outline {
+  fill: #030303;
+  stroke: #000;
+  stroke-width: 12;
+}
+
+.body-fill {
+  fill: url("#bodyLight");
+  stroke: rgba(0, 0, 0, 0.85);
+  stroke-width: 4;
+  transform-origin: 242px 246px;
+  animation: venom-breathe 3.4s ease-in-out infinite;
+}
+
+.body-gloss {
+  fill: rgba(255, 255, 255, 0.14);
+  filter: blur(1px);
+}
+
+.eye {
+  fill: #f7fff7;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.35));
+  transform-origin: center;
+  animation: eye-squint 4.2s ease-in-out infinite;
 }
 
 .details {
@@ -199,46 +270,64 @@ h1 {
   line-height: 1.55;
 }
 
-@keyframes creature-drift {
+@keyframes venom-breathe {
   0%,
   100% {
-    transform: translate3d(-10px, 0, 0) rotate(-3deg) scale(1);
-    border-radius: 45% 55% 51% 49% / 54% 43% 57% 46%;
+    transform: scale(1) rotate(-0.5deg);
   }
   50% {
-    transform: translate3d(14px, -12px, 0) rotate(3deg) scale(1.035);
-    border-radius: 55% 45% 47% 53% / 44% 56% 44% 56%;
+    transform: scale(1.035, 0.965) rotate(1.5deg);
   }
 }
 
-@keyframes membrane {
+@keyframes tentacle-a {
   0%,
   100% {
-    transform: scale(1) rotate(0deg);
+    transform: translate(0, 0);
   }
   50% {
-    transform: scale(1.035) rotate(5deg);
-  }
-}
-
-@keyframes pulse-one {
-  50% {
-    transform: translate(22px, -12px) scale(1.8);
-    opacity: 0.35;
+    transform: translate(-6px, 10px);
   }
 }
 
-@keyframes pulse-two {
+@keyframes tentacle-b {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
   50% {
-    transform: translate(16px, 18px) scale(1.55);
-    opacity: 0.4;
+    transform: translate(8px, 8px);
   }
 }
 
-@keyframes pulse-three {
+@keyframes tentacle-c {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
   50% {
-    transform: translate(-18px, 12px) scale(1.7);
-    opacity: 0.32;
+    transform: translate(8px, -7px);
+  }
+}
+
+@keyframes tentacle-d {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-7px, -5px);
+  }
+}
+
+@keyframes eye-squint {
+  0%,
+  82%,
+  100% {
+    transform: scaleY(1);
+  }
+  88% {
+    transform: scaleY(0.18);
   }
 }
 
@@ -261,6 +350,10 @@ h1 {
   .stage {
     min-height: 300px;
     height: 340px;
+  }
+
+  .desktop-preview {
+    width: min(100%, 420px);
   }
 
   .details {

@@ -31,12 +31,57 @@
           </div>
         </div>
 
-        <div class="stage" aria-hidden="true">
-          <div class="creature">
-            <span class="core"></span>
-            <span class="pulse one"></span>
-            <span class="pulse two"></span>
-            <span class="pulse three"></span>
+        <div class="stage venom-stage" aria-hidden="true">
+          <div class="desktop-preview">
+            <span class="desktop-icon icon-a"></span>
+            <span class="desktop-icon icon-b"></span>
+            <span class="desktop-icon icon-c"></span>
+            <span class="desktop-icon icon-d"></span>
+            <svg
+              class="venom-preview"
+              viewBox="60 0 650 420"
+              role="img"
+              aria-label="Venom Desktop creature preview"
+            >
+              <defs>
+                <radialGradient id="bodyLight" cx="36%" cy="28%" r="72%">
+                  <stop offset="0%" stop-color="#5b5b5b" stop-opacity="0.62" />
+                  <stop offset="38%" stop-color="#1b1b1b" stop-opacity="0.98" />
+                  <stop offset="100%" stop-color="#030303" stop-opacity="1" />
+                </radialGradient>
+                <filter id="wetShadow" x="-35%" y="-35%" width="170%" height="170%">
+                  <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity="0.65" />
+                  <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#141414" flood-opacity="0.7" />
+                </filter>
+              </defs>
+
+              <g class="venom-tentacles" fill="none" stroke-linecap="round">
+                <path class="tentacle tentacle-a" d="M255 222 C205 162 155 86 84 42" />
+                <path class="tentacle tentacle-b" d="M268 224 C308 154 358 80 442 36" />
+                <path class="tentacle tentacle-c" d="M250 238 C184 258 110 276 36 288" />
+                <path class="tentacle tentacle-d" d="M276 244 C300 292 330 348 386 392" />
+                <path class="tentacle-shine tentacle-a" d="M255 222 C205 162 155 86 84 42" />
+                <path class="tentacle-shine tentacle-b" d="M268 224 C308 154 358 80 442 36" />
+                <path class="tentacle-shine tentacle-c" d="M250 238 C184 258 110 276 36 288" />
+              </g>
+
+              <g class="venom-body" filter="url(#wetShadow)">
+                <path
+                  class="body-outline"
+                  d="M237 158 C285 133 340 165 350 220 C360 276 322 333 263 341 C198 350 140 314 124 254 C108 193 180 161 237 158 Z"
+                />
+                <path
+                  class="body-fill"
+                  d="M237 158 C285 133 340 165 350 220 C360 276 322 333 263 341 C198 350 140 314 124 254 C108 193 180 161 237 158 Z"
+                />
+                <path
+                  class="body-gloss"
+                  d="M176 206 C200 168 270 160 306 192 C268 181 218 184 176 206 Z"
+                />
+                <path class="eye eye-left" d="M218 238 C199 216 169 217 158 238 C177 226 199 228 218 238 Z" />
+                <path class="eye eye-right" d="M267 235 C288 214 318 218 329 240 C308 226 286 226 267 235 Z" />
+              </g>
+            </svg>
           </div>
         </div>
       </section>
