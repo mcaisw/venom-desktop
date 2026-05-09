@@ -8,3 +8,5 @@
 *.suo
 *.userosscache
 *.sln.docstates
+.gitconfig_codex
+dist/

@@ -186,7 +186,7 @@ public sealed class LoopbackAudioAnalyzer : IDisposable
         _air = AverageBands(0.68, 1.0);
         _impact = Math.Max(_impact * 0.82, Math.Max(0, _bass - _previousBass) * 6.5);
         _previousBass = _bass;
-        _hasSignal = _rms > 0.0008;
+        _hasSignal = _rms > 0.00018 || _peak > 0.004;
     }
 
     private double AverageBands(double from, double to)
