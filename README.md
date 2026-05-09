@@ -49,11 +49,11 @@ http://127.0.0.1:4173/docs/
 The public download button on the website points to:
 
 ```text
-https://github.com/mcaisw/venom-desktop/releases/latest/download/VenomDesktop-win-x64.zip
+docs/downloads/VenomDesktop-win-x64.zip
 ```
 
-After creating the GitHub repository, upload `dist/VenomDesktop-win-x64.zip` as
-a GitHub Release asset with the same filename.
+For a more formal release flow later, move this file to GitHub Releases and
+change the website link back to the latest Release asset.
 
 ## GitHub Pages
 
